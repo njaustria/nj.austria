@@ -92,8 +92,7 @@
 
                 <div class="hero-visual">
                     <div class="portrait-card">
-                        <img src="" 
-                            alt="Picture of Neian Austria">
+                        <img src="" alt="Picture of Neian Austria">
                     </div>
                 </div>
             </section>
@@ -107,7 +106,7 @@
                     <p>I am a fourth-year BSIT student at Polytechnic University of the Philippines – Sto. Tomas Campus,
                         dedicated to crafting responsive, user-focused, and scalable web applications. I believe great
                         software is built through thoughtful design, clean architecture, and continuous learning.</p>
-                        
+
                     <p>From academic projects to personal development, I continuously expand my expertise in both
                         front-end and back-end technologies. My goal is to grow into a developer who creates reliable,
                         high-quality solutions that make technology simpler, faster, and more accessible for everyone.
@@ -361,9 +360,40 @@
         </main>
     </div>
 
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="mobileMenuLabel">Navigate</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <nav class="mobile-nav">
+                <a href="#about" data-bs-dismiss="offcanvas">About</a>
+                <a href="#experience" data-bs-dismiss="offcanvas">Experience</a>
+                <a href="#skills" data-bs-dismiss="offcanvas">Skills</a>
+                <a href="#projects" data-bs-dismiss="offcanvas">Projects</a>
+                <a href="#certifications" data-bs-dismiss="offcanvas">Certifications</a>
+            </nav>
+            <div class="offcanvas-actions mt-3">
+                <div class="social-links">
+                    <a href="https://github.com/njaustria" target="_blank" rel="noreferrer" aria-label="GitHub"><i
+                            class="bi bi-github"></i></a>
+                    <a href="https://www.linkedin.com/in/njaustria" target="_blank" rel="noreferrer"
+                        aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="mailto:neianaustria07@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+                </div>
+                <button class="theme-toggle ms-2" type="button" aria-label="Toggle dark mode">
+                    <i class="bi bi-moon-stars"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <button class="back-to-top" type="button" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
-
 </body>
 
 </html>

@@ -95,3 +95,31 @@ const typeLoop = () => {
     const typingSpeed = isDeleting ? 60 : 100;
     setTimeout(typeLoop, typingSpeed);
 };
+
+const setActiveLink = (activeLink) => {
+    sectionLinks.forEach((link) => {
+        link.classList.toggle('active', link === activeLink);
+    });
+    activeLinkLockUntil = performance.now() + 800;
+};
+
+const updateActiveLink = () => {
+    if (performance.now() < activeLinkLockUntil) {
+        return;
+    }
+
+    const scrollPosition = window.scrollY + 140;
+
+    document.querySelectorAll('main section[id]').forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            sectionLinks.forEach((link) => {
+                const targetId = link.getAttribute('href');
+                link.classList.toggle('active', targetId === `#${section.id}`);
+            });
+        }
+    });
+};

@@ -195,3 +195,11 @@ body.dark-mode .sidebar {
     align-items: center;
     min-height: 78vh;
 }
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 0.8rem;
+}

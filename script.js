@@ -30,3 +30,42 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 revealItems.forEach((item) => observer.observe(item));
+
+const animateCounters = () => {
+    const counters = document.querySelectorAll('[data-counter]');
+
+
+    counters.forEach((counter) => {
+        const target = Number(counter.dataset.counter);
+        const duration = 1400;
+        const start = performance.now();
+
+
+        const step = (now) => {
+            const progress = Math.min((now - start) / duration, 1);
+            const value = Math.floor(progress * target);
+            counter.textContent = value;
+
+
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            } else {
+                counter.textContent = target;
+            }
+        };
+
+
+        const counterObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    requestAnimationFrame(step);
+                    obs.disconnect();
+                }
+            });
+        }, { threshold: 0.7 });
+
+
+        counterObserver.observe(counter);
+    });
+};
+

@@ -34,12 +34,10 @@ revealItems.forEach((item) => observer.observe(item));
 const animateCounters = () => {
     const counters = document.querySelectorAll('[data-counter]');
 
-
     counters.forEach((counter) => {
         const target = Number(counter.dataset.counter);
         const duration = 1400;
         const start = performance.now();
-
 
         const step = (now) => {
             const progress = Math.min((now - start) / duration, 1);
@@ -54,7 +52,6 @@ const animateCounters = () => {
             }
         };
 
-
         const counterObserver = new IntersectionObserver((entries, obs) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
@@ -64,8 +61,37 @@ const animateCounters = () => {
             });
         }, { threshold: 0.7 });
 
-
         counterObserver.observe(counter);
     });
 };
 
+const typeWords = JSON.parse(typedText.dataset.typed);
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+const typeLoop = () => {
+    const currentWord = typeWords[wordIndex];
+
+    if (!currentWord) {
+        return;
+    }
+
+    typedText.textContent = currentWord.slice(0, charIndex);
+
+    if (!isDeleting && charIndex < currentWord.length) {
+        charIndex += 1;
+    } else if (isDeleting && charIndex > 0) {
+        charIndex -= 1;
+    } else {
+        isDeleting = !isDeleting;
+
+
+        if (!isDeleting) {
+            wordIndex = (wordIndex + 1) % typeWords.length;
+        }
+    }
+
+    const typingSpeed = isDeleting ? 60 : 100;
+    setTimeout(typeLoop, typingSpeed);
+};

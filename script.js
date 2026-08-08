@@ -14,7 +14,6 @@ const updateScrollProgress = () => {
     const progress = height > 0 ? (scrollTop / height) * 100 : 0;
     progressIndicator.style.width = `${Math.min(progress, 100)}%`;
 
-
     backToTopButton.style.display = scrollTop > 600 ? 'inline-flex' : 'none';
 };
 
@@ -43,7 +42,6 @@ const animateCounters = () => {
             const progress = Math.min((now - start) / duration, 1);
             const value = Math.floor(progress * target);
             counter.textContent = value;
-
 
             if (progress < 1) {
                 requestAnimationFrame(step);
@@ -86,7 +84,6 @@ const typeLoop = () => {
     } else {
         isDeleting = !isDeleting;
 
-
         if (!isDeleting) {
             wordIndex = (wordIndex + 1) % typeWords.length;
         }
@@ -114,7 +111,6 @@ const updateActiveLink = () => {
         const sectionTop = section.offsetTop;
         const sectionBottom = sectionTop + section.offsetHeight;
 
-
         if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
             sectionLinks.forEach((link) => {
                 const targetId = link.getAttribute('href');
@@ -123,3 +119,18 @@ const updateActiveLink = () => {
         }
     });
 };
+
+const syncThemeIcons = () => {
+    const isDark = document.body.classList.contains('dark-mode');
+    themeToggles.forEach((btn) => {
+        const icon = btn.querySelector('i');
+        if (icon) icon.className = isDark ? 'bi bi-sun' : 'bi bi-moon-stars';
+    });
+};
+
+themeToggles.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        syncThemeIcons();
+    });
+});

@@ -254,3 +254,41 @@ body.dark-mode .sidebar {
     gap: 1rem;
     max-width: 42rem;
 }
+
+.hero-stats div,
+.skill-card,
+.project-card,
+.cert-item,
+.contact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.hero-stats div {
+    padding: 1rem;
+}
+
+.hero-stats strong {
+    display: block;
+    font-size: 1.3rem;
+    margin-bottom: 0.25rem;
+}
+
+.hero-stats span {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.portrait-card {
+    padding: 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.portrait-card img {
+    border-radius: 1.5rem;
+}

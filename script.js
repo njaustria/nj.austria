@@ -134,3 +134,5 @@ themeToggles.forEach((btn) => {
         syncThemeIcons();
     });
 });
+
+syncThemeIcons();

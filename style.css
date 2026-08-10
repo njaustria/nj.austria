@@ -292,3 +292,27 @@ body.dark-mode .sidebar {
 .portrait-card img {
     border-radius: 1.5rem;
 }
+
+.about-grid,
+.skills-grid,
+.project-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.about-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.about-grid p,
+.skill-card p,
+.project-card p,
+.contact-card p,
+.timeline-item p {
+    color: var(--muted);
+    margin: 0;
+}
+
+.about-section p {
+    text-align: justify;
+}

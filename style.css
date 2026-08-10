@@ -511,3 +511,62 @@ body.dark-mode .sidebar {
     width: 38px;
     height: 38px;
 }
+
+@media (max-width: 991px) {
+    .page-shell {
+        display: block;
+    }
+
+    #main-content {
+        padding: 1rem 1rem 2rem;
+    }
+
+    .topbar {
+        display: flex;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .about-grid,
+    .skills-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .section-block {
+        padding: 3rem 0;
+    }
+
+    .topbar {
+        padding: 0.8rem 0 0.95rem;
+        position: sticky;
+        top: 0;
+        z-index: 1040;
+        background: rgba(246, 242, 235, 0.96);
+        backdrop-filter: blur(18px);
+    }
+
+    body.dark-mode .topbar {
+        background: rgba(6, 6, 6, 0.96);
+    }
+
+    .hero-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-item,
+    .cert-item {
+        grid-template-columns: 1fr;
+        display: grid;
+    }
+
+    .hero h1,
+    .section-heading h2 {
+        font-size: 2rem;
+    }
+}

@@ -466,3 +466,14 @@ body.dark-mode .sidebar {
     z-index: 1100;
     display: none;
 }
+
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}

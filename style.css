@@ -330,3 +330,34 @@ body.dark-mode .sidebar {
     margin-top: 0.1rem;
     text-align: justify;
 }
+
+.skill-card,
+.project-card,
+.cert-item,
+.contact-card {
+    padding: 1.2rem;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.project-header h3 {
+    margin: 0;
+    flex: 1;
+}
+
+.project-header a {
+    white-space: nowrap;
+    font-weight: 600;
+    color: var(--text);
+}

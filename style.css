@@ -392,3 +392,26 @@ body.dark-mode .sidebar {
     grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.timeline {
+    display: grid;
+    gap: 1rem;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--border);
+}
+
+.timeline-item:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+.timeline-year {
+    font-weight: 700;
+    color: var(--muted);
+}
+

@@ -526,7 +526,8 @@ body.dark-mode .sidebar {
     }
 
     .hero {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column-reverse;
         min-height: auto;
     }
 

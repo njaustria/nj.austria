@@ -136,3 +136,37 @@ themeToggles.forEach((btn) => {
 });
 
 syncThemeIcons();
+
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (event) => {
+        const targetId = anchor.getAttribute('href');
+        if (!targetId || targetId === '#') {
+            return;
+        }
+
+        const target = document.querySelector(targetId);
+        if (!target) {
+            return;
+        }
+
+        event.preventDefault();
+        setActiveLink(anchor);
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+});
+
+backToTopButton?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+window.addEventListener('scroll', () => {
+    updateScrollProgress();
+    updateActiveLink();
+});
+
+window.addEventListener('load', () => {
+    updateScrollProgress();
+    updateActiveLink();
+    animateCounters();
+    typeLoop();
+});
